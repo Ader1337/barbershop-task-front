@@ -28,6 +28,7 @@ aside {
 }
 html,
 ::ng-deep body {
+    background: #1f1f1f;
     margin: 0 !important;
     font-family: "Roboto";
     height: 100%;
@@ -139,9 +140,8 @@ h6 {
 }
 .error-text {
     color: red;
-    text-align:center;
+    text-align: center;
     margin: 0 0 16px 0;
-
 }
 .custom-input-1 {
     background: #1f1f1f;
@@ -163,4 +163,9 @@ h6 {
     text-align: center;
     color: #e3e3e3;
     padding: 10px;
+}
+
+.page-wrapper {
+    color: #e3e3e3;
+    min-height: 100vh;
 }

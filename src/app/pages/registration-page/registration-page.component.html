@@ -2,20 +2,22 @@
     <div class="form-page__inner">
         <div class="form-page__body">
             <h4 class="form-page__title">Реєстрація</h4>
-            <p class="form-page__error error-text">Цю пошту вже зареєстровано</p>
+            <p *ngIf="error" class="form-page__error error-text">{{error}}</p>
             <form class="form-page__form">
                 <label class="form-page__field-label">
-                    <input placeholder="Введіть пошту" class="form-page__input custom-input-1" type="text">
+                    <input name="email" [(ngModel)]="registerForm.email" placeholder="Введіть пошту" class="form-page__input custom-input-1" type="text">
                 </label>
                 <label class="form-page__field-label">
-                    <input placeholder="Введіть пароль" class="form-page__input custom-input-1" type="password">
+                    <input name="password" [(ngModel)]="registerForm.pass" placeholder="Введіть пароль"
+                        class="form-page__input custom-input-1" type="password">
                 </label>
                 <label class="form-page__field-label">
-                    <input placeholder="Повротірь пароль" class="form-page__input custom-input-1" type="password">
+                    <input name="repeatPassword" [(ngModel)]="registerForm.repeatPass" placeholder="Повторіть пароль" class="form-page__input custom-input-1" type="password">
                 </label>
-                <button class="form-page_submit custom-btn-1">Зареєструватись</button>
+                <button 
+                   (click)="onSubmitRegister()" class="form-page_submit custom-btn-1">Зареєструватись</button>
             </form>
-            <a class="form-page__nav-link">Вже зареєстрований</a>
+            <a routerLink="/login" class="form-page__nav-link">Вже зареєстрований</a>
         </div>
     </div>
 </div>
