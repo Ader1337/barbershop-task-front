@@ -7,7 +7,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { MainComponent } from './pages/main/main.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
   ],

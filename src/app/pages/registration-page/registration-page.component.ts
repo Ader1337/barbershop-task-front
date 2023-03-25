@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
+import { Router } from '@angular/router';
 
 interface IRegisterForm {
   email: string,
   pass: string,
   repeatPass: string
 }
+
+interface IregisterBody {
+  email: string,
+  password: string,
+}
+
 
 @Component({
   selector: 'app-registration-page',
@@ -18,7 +26,10 @@ export class RegistrationPageComponent implements OnInit {
     repeatPass: ''
   }
   error: string = ''
-  constructor() { }
+  constructor(
+    private readonly authService: AuthService,
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -48,6 +59,24 @@ export class RegistrationPageComponent implements OnInit {
       this.error = 'Паролі не співпадають.'
       return
     }
+
+    let body: IregisterBody = {
+      email: this.registerForm.email,
+      password: this.registerForm.pass
+    }
+
+    this.authService.register(body).subscribe({
+      next: (response) => {
+        localStorage.setItem('token',response.token)
+        this.router.navigate(['main'])
+
+      },error: (err) => {
+        if (err.error.message === 'Such user already exists')
+          this.error = "Такий email вже зареєстровано"
+
+        console.error(err)
+      }
+    })
 
   }
 
