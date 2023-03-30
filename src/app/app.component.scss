@@ -153,7 +153,7 @@ h6 {
     color: inherit;
 }
 .custom-btn-1 {
-    background: #5c459b;
+    background: #2a5cab;
     box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.04), 2px 2px 5px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 100%;
@@ -167,5 +167,35 @@ h6 {
 
 .page-wrapper {
     color: #e3e3e3;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    padding: 100px 0 0 0;
+}
+
+::ng-deep {
+    .mat-form-field-infix {
+        display: flex !important;
+    }
+    .mat-datepicker-toggle {
+        cursor:  pointer !important;
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        .mat-focus-indicator.mat-icon-button.mat-button-base {
+            position: absolute !important;
+            right: 0 !important;
+            top: -13px !important;
+        }
+    }
+    .mat-input-element {
+        &::placeholder {
+            color: #e3e3e3 !important;
+        }
+    }
+    .mat-datepicker-toggle-default-icon {
+        path{
+            fill: #e3e3e3 !important;
+        }
+    }
 }
