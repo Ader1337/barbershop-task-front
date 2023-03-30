@@ -1,0 +1,30 @@
+.header {
+    position: fixed;
+    width: 100%;
+    background: #1f1f1f;
+    box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.03), 4px 4px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid #53525287;
+    color: #e3e3e3;
+    &__inner {
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__column {
+    }
+
+    &__nav {
+    }
+
+    &__nav-item {
+        cursor: pointer;
+        font-size: 16px;
+        &:hover {
+            color: rgb(103, 103, 243);
+        }
+    }
+}
+.logo{
+    font-size: 22px;
+}
