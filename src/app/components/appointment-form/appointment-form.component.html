@@ -1,50 +1,86 @@
 <div class="appointment">
-    <div class="appointment__inner">
-        <div class="form-page__body">
-            <h4 class="form-page__title">Записатися до барбера</h4>
-           <!--  <p *ngIf="error" class="form-page__error error-text">{{error}}</p> -->
-            <form class="form-page__form">
-                <label class="form-page__field-label">
-                    <input  name="name" placeholder="Введіть Ваше ім'я"
-                        class="form-page__input custom-input-1" type="text">
-                </label>
-                <label class="form-page__field-label">
-                    <input  name="phone" placeholder="Номер телефону"
-                        class="form-page__input custom-input-1" type="text">
-                </label>
-                <p class="appointment__middle-text">Виберіть барбера</p>
-                <div class="check-barber">
-                    <div *ngFor="let barber of barbersList" (click)="onSelectBarber(barber?._id)" [class.active]="selectedBarberId === barber?._id" class="check-barber__item">
-                        <img [src]="barber?.photoImg" class="check-barber__photo">
-                        <div class="check-barber__name">{{barber?.name}}</div>
-                    </div>
-                    <!-- <div (click)="onSelectBarber(1)" [class.active]="selectedBarberId === 1" class="check-barber__item">
-                        <img src="https://images.squarespace-cdn.com/content/v1/58c9b5b7d1758e1f19de93b7/1588965565728-9KTTTHL0AKQNEZEU27DL/30.png"
-                            class="check-barber__photo">
-                        <div class="check-barber__name">Аwdawd Аwdawdaw</div>
-                    </div>
-                    <div (click)="onSelectBarber(2)" [class.active]="selectedBarberId === 2" class="check-barber__item">
-                        <img src="https://images.squarespace-cdn.com/content/v1/58c9b5b7d1758e1f19de93b7/1588965565728-9KTTTHL0AKQNEZEU27DL/30.png"
-                            class="check-barber__photo">
-                        <div class="check-barber__name">Аwdawd Аwdawdaw</div>
-                    </div> -->
+    <div *ngIf="!isRunLoader; else loader" class="appointment__inner">
+        <div *ngIf="userRecord else addRecordForm" class="use-record-info">
+            <div class="user-record">
+                <div class="user-record__top">
+                    <p class="user-record__title">Інформація про запис</p>
+                    <p class="user-record__cancel">
+                        <span (click)="cancelRecord(userRecord.record._id)">Відмінити запис</span>
+                    </p>
                 </div>
-                <mat-form-field appearance="fill">
-                    <input name="date" [min]="todayDate" (dateInput)="onDateChange($event.value)" [max]="dayAfterweek" [(ngModel)]="selectedDate"  placeholder="Виберіть дату" readonly matInput [matDatepicker]="picker">
-            <!--         <mat-hint>MM/DD/YYYY</mat-hint> -->
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker  #picker></mat-datepicker>
-                </mat-form-field>
-                <p class="appointment__middle-text">Вільні години до запису</p>
-                <div class="free-time">
-                    <div (click)="onSelectTime('9:00')" [class.active]="selectedTime === '9:00'" class="free-time__item">9:00</div>
-                    <div (click)="onSelectTime('10:00')" [class.active]="selectedTime === '10:00'" class="free-time__item">10:00</div>
-                    <div (click)="onSelectTime('12:00')" [class.active]="selectedTime === '12:00'" class="free-time__item">12:00</div>
-                    <div (click)="onSelectTime('14:00')" [class.active]="selectedTime === '14:00'" class="free-time__item">14:00</div>
-                    <div (click)="onSelectTime('15:00')" [class.active]="selectedTime === '15:00'" class="free-time__item">15:00</div>
+                <div class="user-record__body">
+                    <div class="user-record__left">
+                        <img [src]="userRecord.barber.photoImg" alt="barber-photo" class="user-record__barbar-img">
+                        <p class="user-record__barber-name">{{userRecord.barber.name}}</p>
+                    </div>
+                    <div class="user-record__right">
+                        <p class="user-record__greeting">Вітаємо {{userRecord.record.name}}!</p>
+                        <p class="user-record__barber-date">
+                            Ви записані на {{userRecord.record.date | date: 'dd.MM.YYYY'}} о {{userRecord.record.time}}
+                            <br>
+                        </p>
+                        <p class="user-record__text">Чекаємо на Ваш візит {{getDateDiff()}}!
+                            <br>
+                            <br>
+                        </p>
+                        <p class="user-record__text user-record__text--left">З повагою, <br>
+                            Команда барбершопу.</p>
+                    </div>
                 </div>
-                <button  class="form-page_submit custom-btn-1">Записатися</button>
-            </form>
+            </div>
         </div>
+        <ng-template #addRecordForm>
+            <div class="form-page__body">
+                <h4 class="form-page__title">Записатися до барбера</h4>
+                <form class="form-page__form">
+                    <label class="form-page__field-label">
+                        <input [(ngModel)]="userForm.name" name="name" placeholder="Введіть Ваше ім'я"
+                            class="form-page__input custom-input-1" type="text">
+                    </label>
+                    <label class="form-page__field-label">
+                        <input [(ngModel)]="userForm.phone" name="phone" placeholder="Номер телефону"
+                            class="form-page__input custom-input-1" type="text">
+                    </label>
+                    <p class="appointment__middle-text">Виберіть барбера</p>
+                    <div class="check-barber">
+                        <div *ngFor="let barber of barbersList" (click)="onSelectBarber(barber?._id)"
+                            [class.active]="selectedBarberId === barber?._id" class="check-barber__item">
+                            <img [src]="barber?.photoImg" class="check-barber__photo">
+                            <div class="check-barber__name">{{barber?.name}}</div>
+                        </div>
+                    </div>
+                    <mat-form-field appearance="fill">
+                        <input name="date" [min]="todayDate" (dateInput)="onDateChange($event.value)"
+                            [max]="dayAfterweek" [(ngModel)]="selectedDate" placeholder="Виберіть дату" readonly
+                            matInput [matDatepicker]="picker">
+                        <!--         <mat-hint>MM/DD/YYYY</mat-hint> -->
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <ng-container *ngIf="availableTimes">
+                        <p class="appointment__middle-text">Вільні години до запису</p>
+                        <div class="free-time">
+                            <div *ngFor="let time of availableTimes" (click)="onSelectTime(time)"
+                                [class.active]="selectedTime === time" class="free-time__item">{{time}}</div>
+                        </div>
+                    </ng-container>
+                    <p *ngIf="error" class="form-page__error error-text">{{error}}</p>
+                    <button [disabled]="!this.selectedDate || !this.selectedTime || !this.selectedBarberId"
+                        (click)="onAddRecord()" class="form-page_submit custom-btn-1">Записатися</button>
+                </form>
+            </div>
+        </ng-template>
     </div>
+    <ng-template #loader>
+        <div class="appointment__inner">
+            <div class="loader__inner">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
 </div>

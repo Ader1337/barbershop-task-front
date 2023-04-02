@@ -163,6 +163,10 @@ h6 {
     text-align: center;
     color: #e3e3e3;
     padding: 10px;
+    &:disabled{
+        cursor:not-allowed;
+        opacity: 0.5;
+    }
 }
 
 .page-wrapper {
