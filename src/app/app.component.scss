@@ -163,8 +163,8 @@ h6 {
     text-align: center;
     color: #e3e3e3;
     padding: 10px;
-    &:disabled{
-        cursor:not-allowed;
+    &:disabled {
+        cursor: not-allowed;
         opacity: 0.5;
     }
 }
@@ -180,7 +180,7 @@ h6 {
         display: flex !important;
     }
     .mat-datepicker-toggle {
-        cursor:  pointer !important;
+        cursor: pointer !important;
         width: 100% !important;
         height: 100% !important;
         position: absolute !important;
@@ -192,13 +192,18 @@ h6 {
             top: -13px !important;
         }
     }
+    .mat-form-field-flex {
+        border: 1px solid #2a5cab;
+        border-radius: 10px !important;
+        box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.03), 4px 4px 10px rgba(0, 0, 0, 0.4);
+    }
     .mat-input-element {
         &::placeholder {
             color: #e3e3e3 !important;
         }
     }
     .mat-datepicker-toggle-default-icon {
-        path{
+        path {
             fill: #e3e3e3 !important;
         }
     }

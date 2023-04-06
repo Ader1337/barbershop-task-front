@@ -33,14 +33,16 @@
             <div class="form-page__body">
                 <h4 class="form-page__title">Записатися до барбера</h4>
                 <form class="form-page__form">
-                    <label class="form-page__field-label">
-                        <input [(ngModel)]="userForm.name" name="name" placeholder="Введіть Ваше ім'я"
-                            class="form-page__input custom-input-1" type="text">
-                    </label>
-                    <label class="form-page__field-label">
-                        <input [(ngModel)]="userForm.phone" name="phone" placeholder="Номер телефону"
-                            class="form-page__input custom-input-1" type="text">
-                    </label>
+                    <div class="form-page__inputs">
+                        <label class="form-page__field-label">
+                            <input [(ngModel)]="userForm.name" name="name" placeholder="Введіть Ваше ім'я"
+                                class="form-page__input custom-input-1" type="text">
+                        </label>
+                        <label class="form-page__field-label">
+                            <input [(ngModel)]="userForm.phone" name="phone" placeholder="Номер телефону"
+                                class="form-page__input custom-input-1" type="text">
+                        </label>
+                    </div>
                     <p class="appointment__middle-text">Виберіть барбера</p>
                     <div class="check-barber">
                         <div *ngFor="let barber of barbersList" (click)="onSelectBarber(barber?._id)"
