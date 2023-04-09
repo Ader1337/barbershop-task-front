@@ -1,0 +1,42 @@
+.about {
+    &__wrapper {
+        padding: 40px 0;
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0 0 30px 0;
+    }
+
+    &__text {
+        line-height: 22px;
+        font-size: 16px;
+        margin: 0 0 20px 0;
+    }
+    &__barbers {
+    }
+
+    &__barbers-body{
+
+    }
+
+    &__barbers-item {
+        margin: 0 0 30px 0;
+        display: flex;
+        img {
+            border-radius: 10px;
+            margin: 0 20px 0 0;
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+    }
+
+    &__barbers-name {
+        margin: 0 0 15px 0;
+        font-size: 20px;
+    }
+}
