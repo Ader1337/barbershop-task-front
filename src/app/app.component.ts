@@ -18,7 +18,7 @@ export class AppComponent {
     console.log(localStorage.getItem('token'))
     if (!localStorage.getItem('token'))
       this.router.navigate(['login'])
-    else
-      this.router.navigate(['main'])
+  /*   else
+      this.router.navigate(['form']) */
   }
 }

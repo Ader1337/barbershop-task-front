@@ -23,8 +23,16 @@ export class RecordsService {
     return this.httpClient.post(`${API_URL}`, body, { headers: this.generateHeadersService.getHeaders() })
   }
 
+  public getRecords(barberId?: any): Observable<any> {
+    if (barberId)
+      return this.httpClient.get(`${API_URL}s`, { params: { barberId }, headers: this.generateHeadersService.getHeaders() })
+    else
+      return this.httpClient.get(`${API_URL}s`, { headers: this.generateHeadersService.getHeaders() })
+
+  }
+
   public getUserRecord(query: any): Observable<any> {
-    return this.httpClient.get(`${API_URL}`, {params: query, headers: this.generateHeadersService.getHeaders() })
+    return this.httpClient.get(`${API_URL}`, { params: query, headers: this.generateHeadersService.getHeaders() })
   }
 
   public getAvailableTime(query: any): Observable<any> {

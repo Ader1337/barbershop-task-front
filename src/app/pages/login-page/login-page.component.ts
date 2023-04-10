@@ -33,6 +33,9 @@ export class LoginPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.router.navigateByUrl('');
+    }
   }
 
   onLogin() {
@@ -50,7 +53,7 @@ export class LoginPageComponent implements OnInit {
       next: (response) => {
         console.log(response)
         localStorage.setItem('token', response.token)
-        this.router.navigate(['main'])
+        this.router.navigate([''])
       },
       error: (err) => {
         console.log(err.error.message)

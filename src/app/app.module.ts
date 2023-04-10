@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { AboutComponent } from './components/about/about.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { MatInputModule } from '@angular/material/input';
     RegistrationPageComponent,
     MainComponent,
     HeaderComponent,
-    AppointmentFormComponent
+    AppointmentFormComponent,
+    AboutComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,

@@ -18,8 +18,17 @@
     }
 
     &__nav-item {
+        color: #e3e3e3;
+        text-decoration: none;
         cursor: pointer;
         font-size: 16px;
+        &.active{
+            text-decoration: underline;
+             color: rgb(103, 103, 243);
+        }
+        &:not(:last-child){
+            margin: 0 20px 0 0;
+        }
         &:hover {
             color: rgb(103, 103, 243);
         }

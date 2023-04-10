@@ -32,6 +32,9 @@ export class RegistrationPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.router.navigateByUrl('');
+    }
   }
 
   isEmailCorrect() {
@@ -68,7 +71,7 @@ export class RegistrationPageComponent implements OnInit {
     this.authService.register(body).subscribe({
       next: (response) => {
         localStorage.setItem('token',response.token)
-        this.router.navigate(['main'])
+        this.router.navigate([''])
 
       },error: (err) => {
         if (err.error.message === 'Such user already exists')

@@ -3,15 +3,18 @@ import * as moment from 'moment';
 import { BarberService } from './../../services/barber.service';
 import { AuthService } from './../../services/auth.service';
 import { RecordsService } from './../../services/records.service';
+moment.locale('uk')
 
 interface IRecordForm {
   date: any,
   time: string,
+  fullDate: any,
   /* userId: string, */
   barberId: string,
   formattedDate: string,
   name: string,
-  phone: string
+  phone: string,
+  barberName: string
 }
 
 @Component({
@@ -30,7 +33,7 @@ export class AppointmentFormComponent implements OnInit {
   userInfo: any
   dayAfterweek: any
   selectedDate: any
-  selectedBarberId: any
+  selectedBarber: any
   selectedTime: string = ''
   barbersList: any
   availableTimes: any
@@ -62,13 +65,25 @@ export class AppointmentFormComponent implements OnInit {
     })
   }
 
-  getDateDiff() {
-    let date = moment(this.userRecord.record.date).format('DD/MM/YYYY')
-    let dateParts: any = date.split('/')
-    let timeParts: any = this.userRecord.record.time.split(':')
-    moment.locale('uk')
+  getFullDate(date: any, time: string) {
+    let dateFormat = moment(date).format('DD/MM/YYYY')
+    let dateParts: any = dateFormat.split('/')
+    let timeParts: any = time.split(':')
     let date2 = new Date(+dateParts[2], +dateParts[1] - 1, +dateParts[0], timeParts[0], timeParts[1])
-    return moment(date2).fromNow()
+    return date2 
+  }
+
+  getDateDiff(fullDate: any) {
+    return moment(fullDate).fromNow()
+  }
+
+  numberOnly(event: any): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+
   }
 
   cancelRecord(recordId: any) {
@@ -77,6 +92,7 @@ export class AppointmentFormComponent implements OnInit {
       next: (response) => {
         this.userRecord = null
         this.isRunLoader = false
+        this.ngOnInit()
       },
       error: (err) => {
         this.isRunLoader = false
@@ -109,9 +125,9 @@ export class AppointmentFormComponent implements OnInit {
   }
 
   getAvailableTime() {
-    if (!this.selectedBarberId || !this.selectedDate)
+    if (!this.selectedBarber || !this.selectedDate)
       return
-    this.recordsService.getAvailableTime({ barberId: this.selectedBarberId, formattedDate: moment(this.selectedDate).format('DD.MM.YYYY') }).subscribe({
+    this.recordsService.getAvailableTime({ barberId: this.selectedBarber._id, formattedDate: moment(this.selectedDate).format('DD.MM.YYYY') }).subscribe({
       next: (response) => {
         let targetArr = []
         if (moment(this.selectedDate).format('DD.MM.YYYY') == moment().format('DD.MM.YYYY')) {
@@ -133,8 +149,8 @@ export class AppointmentFormComponent implements OnInit {
   }
 
 
-  onSelectBarber(id: number) {
-    this.selectedBarberId = id
+  onSelectBarber(barber: any) {
+    this.selectedBarber = barber
     this.getAvailableTime()
   }
 
@@ -149,7 +165,7 @@ export class AppointmentFormComponent implements OnInit {
   }
 
   onAddRecord() {
-    if (!this.selectedDate || !this.selectedTime || !this.selectedBarberId)
+    if (!this.selectedDate || !this.selectedTime || !this.selectedBarber)
       return
 
     this.error = ''
@@ -167,8 +183,10 @@ export class AppointmentFormComponent implements OnInit {
       name: this.userForm.name,
       phone: this.userForm.phone,
       /*  userId: this.userInfo._id, */
+      fullDate: this.getFullDate(this.selectedDate, this.selectedTime),
       formattedDate: moment(this.selectedDate).format('DD.MM.YYYY'),
-      barberId: this.selectedBarberId
+      barberId: this.selectedBarber._id,
+      barberName: this.selectedBarber.name
     }
 
     this.recordsService.addRecord(body).subscribe({

@@ -19,7 +19,7 @@
                             Ви записані на {{userRecord.record.date | date: 'dd.MM.YYYY'}} о {{userRecord.record.time}}
                             <br>
                         </p>
-                        <p class="user-record__text">Чекаємо на Ваш візит {{getDateDiff()}}!
+                        <p class="user-record__text">Чекаємо на Ваш візит {{getDateDiff(userRecord.record.fullDate)}}!
                             <br>
                             <br>
                         </p>
@@ -39,14 +39,14 @@
                                 class="form-page__input custom-input-1" type="text">
                         </label>
                         <label class="form-page__field-label">
-                            <input [(ngModel)]="userForm.phone" name="phone" placeholder="Номер телефону"
+                            <input (keypress)="numberOnly($event)" [(ngModel)]="userForm.phone" name="phone" placeholder="Номер телефону"
                                 class="form-page__input custom-input-1" type="text">
                         </label>
                     </div>
                     <p class="appointment__middle-text">Виберіть барбера</p>
                     <div class="check-barber">
-                        <div *ngFor="let barber of barbersList" (click)="onSelectBarber(barber?._id)"
-                            [class.active]="selectedBarberId === barber?._id" class="check-barber__item">
+                        <div *ngFor="let barber of barbersList" (click)="onSelectBarber(barber)"
+                            [class.active]="selectedBarber?._id === barber?._id" class="check-barber__item">
                             <img [src]="barber?.photoImg" class="check-barber__photo">
                             <div class="check-barber__name">{{barber?.name}}</div>
                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     </ng-container>
                     <p *ngIf="error" class="form-page__error error-text">{{error}}</p>
-                    <button [disabled]="!this.selectedDate || !this.selectedTime || !this.selectedBarberId"
+                    <button [disabled]="!this.selectedDate || !this.selectedTime || !this.selectedBarber"
                         (click)="onAddRecord()" class="form-page_submit custom-btn-1">Записатися</button>
                 </form>
             </div>

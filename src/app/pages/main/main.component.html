@@ -1,8 +1,10 @@
 
-<app-header></app-header>
-<div class="page-wrapper">
-    <app-appointment-form></app-appointment-form>
-    <!-- <h3>Дарова, {{userInfo?.email}}</h3>
-    
-    <button (click)="signOut()">Вийти</button> -->
-</div>
+<ng-container>
+    <app-header></app-header>
+    <div class="page-wrapper">
+        <router-outlet></router-outlet>
+        <!-- <h3>Дарова, {{userInfo?.email}}</h3>
+        
+        <button (click)="signOut()">Вийти</button> -->
+    </div>
+</ng-container>
