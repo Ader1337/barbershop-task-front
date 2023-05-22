@@ -1,0 +1,573 @@
+<div class="review">
+    <div class="review__container">
+        <div class="review__container-inner container">
+            <div class="review__top">
+                <div class="review__top-left">
+                    <h3 id="rewiews" class="review__title title">Відгуки наших клієнтів</h3>
+                    <p class="review__subtext">Ви можете залишити відгук у нашого адміністратора після стрижки</p>
+                </div>
+                <div class="review__top-arrays">
+                    <button id="btn-left" class="review__top-array-left">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                    <button id="btn-right" class="review__top-array-right">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class=" container ">
+            <swiper [navigation]="{nextEl: '#btn-right',  prevEl: '#btn-left'}" [watchOverflow]="true"
+                [slidesPerView]="1" [spaceBetween]="20" [initialSlide]="0" [centeredSlides]="false"
+                [breakpoints]="{'768': {'slidesPerView': 2,'spaceBetween': 30}}" class="swiper-wrapper">
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <p class="review-item__title">Відмінний барбершоп!</p>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Чудовий сервіс, професійні майстри і приємна атмосфера. Завжди задоволений результатом!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-1.jpg"
+                                    alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Світомир Степченко</p>
+                                    <!--     <p class="review-item__person-position">Будівельні матеріали</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Першокласний барбершоп!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Все до дрібниць продумано - від стилістики інтер'єру до якості стрижки. Рекомендую!"
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-2.jpg"
+                                    alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Лев Пришляк</p>
+                                    <!--   <p class="review-item__person-position">Товари для тварин</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Найкращий барбершоп у місті!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Стримані ціни, висока якість обслуговування і дружній колектив. Всім друзям рекомендую!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--  <img class="review-item__person-photo" src="/assets/landing-img/clients/client-3.jpg"
+                                    alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Коля Береза</p>
+                                    <!--   <p class="review-item__person-position">Побутова техніка</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Відмінне місце для чоловіків, які дбають про свою
+                                    зовнішність</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Тут завжди можна отримати модний зачіску та настрій.
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-4.jpg"
+                                    alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Богдан Калаш</p>
+                                    <!--   <p class="review-item__person-position">Магазин гаджетів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Завітав у цей барбершоп з рекомендації друга і не
+                                    пошкодував</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Відмінна якість роботи, уважний персонал і зручні години роботи. Тепер тут мій постійний
+                            перукар!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-5.jpg"
+                                    alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Адам Купченко</p>
+                                    <!--   <p class="review-item__person-position">Магазин аксесуарів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+    <div class="review__container">
+        <div class="review__container-inner container">
+            <div class="review__top">
+                <div class="review__top-left">
+                    <h3 id="rewiews" class="review__title title">Відгуки про барбера Dougal Taki</h3>
+                </div>
+                <div class="review__top-arrays">
+                    <button id="btn-left-2" class="review__top-array-left">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                    <button id="btn-right-2" class="review__top-array-right">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class=" container ">
+            <swiper [navigation]="{nextEl: '#btn-right-2',  prevEl: '#btn-left-2'}" [watchOverflow]="true" [slidesPerView]="1"
+                [spaceBetween]="20" [initialSlide]="0" [centeredSlides]="false"
+                [breakpoints]="{'768': {'slidesPerView': 2,'spaceBetween': 30}}" class="swiper-wrapper">
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <p class="review-item__title">Відмінний барбершоп!</p>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Чудовий сервіс, професійні майстри і приємна атмосфера. Завжди задоволений результатом!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-1.jpg"
+                                        alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Світомир Степченко</p>
+                                    <!--     <p class="review-item__person-position">Будівельні матеріали</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Першокласний барбершоп!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Все до дрібниць продумано - від стилістики інтер'єру до якості стрижки. Рекомендую!"
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-2.jpg"
+                                        alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Лев Пришляк</p>
+                                    <!--   <p class="review-item__person-position">Товари для тварин</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Найкращий барбершоп у місті!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Стримані ціни, висока якість обслуговування і дружній колектив. Всім друзям рекомендую!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--  <img class="review-item__person-photo" src="/assets/landing-img/clients/client-3.jpg"
+                                        alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Коля Береза</p>
+                                    <!--   <p class="review-item__person-position">Побутова техніка</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Відмінне місце для чоловіків, які дбають про свою
+                                    зовнішність</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Тут завжди можна отримати модний зачіску та настрій.
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-4.jpg"
+                                        alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Богдан Калаш</p>
+                                    <!--   <p class="review-item__person-position">Магазин гаджетів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Завітав у цей барбершоп з рекомендації друга і не
+                                    пошкодував</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Відмінна якість роботи, уважний персонал і зручні години роботи. Тепер тут мій постійний
+                            перукар!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-5.jpg"
+                                        alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Адам Купченко</p>
+                                    <!--   <p class="review-item__person-position">Магазин аксесуарів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+    <div class="review__container">
+        <div class="review__container-inner container">
+            <div class="review__top">
+                <div class="review__top-left">
+                    <h3 id="rewiews" class="review__title title">Відгуки про барбера Georg Newman</h3>
+                </div>
+                <div class="review__top-arrays">
+                    <button id="btn-left-2" class="review__top-array-left">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                    <button id="btn-right-2" class="review__top-array-right">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class=" container ">
+            <swiper [navigation]="{nextEl: '#btn-right-2',  prevEl: '#btn-left-2'}" [watchOverflow]="true"
+                [slidesPerView]="1" [spaceBetween]="20" [initialSlide]="0" [centeredSlides]="false"
+                [breakpoints]="{'768': {'slidesPerView': 2,'spaceBetween': 30}}" class="swiper-wrapper">
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <p class="review-item__title">Відмінний барбершоп!</p>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Чудовий сервіс, професійні майстри і приємна атмосфера. Завжди задоволений результатом!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-1.jpg"
+                                            alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Світомир Степченко</p>
+                                    <!--     <p class="review-item__person-position">Будівельні матеріали</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Першокласний барбершоп!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Все до дрібниць продумано - від стилістики інтер'єру до якості стрижки. Рекомендую!"
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-2.jpg"
+                                            alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Лев Пришляк</p>
+                                    <!--   <p class="review-item__person-position">Товари для тварин</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Найкращий барбершоп у місті!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Стримані ціни, висока якість обслуговування і дружній колектив. Всім друзям рекомендую!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--  <img class="review-item__person-photo" src="/assets/landing-img/clients/client-3.jpg"
+                                            alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Коля Береза</p>
+                                    <!--   <p class="review-item__person-position">Побутова техніка</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Відмінне місце для чоловіків, які дбають про свою
+                                    зовнішність</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Тут завжди можна отримати модний зачіску та настрій.
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-4.jpg"
+                                            alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Богдан Калаш</p>
+                                    <!--   <p class="review-item__person-position">Магазин гаджетів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Завітав у цей барбершоп з рекомендації друга і не
+                                    пошкодував</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Відмінна якість роботи, уважний персонал і зручні години роботи. Тепер тут мій постійний
+                            перукар!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-5.jpg"
+                                            alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Адам Купченко</p>
+                                    <!--   <p class="review-item__person-position">Магазин аксесуарів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+    <div class="review__container">
+        <div class="review__container-inner container">
+            <div class="review__top">
+                <div class="review__top-left">
+                    <h3 id="rewiews" class="review__title title">Відгуки про барбера Gang Nicomachus</h3>
+                </div>
+                <div class="review__top-arrays">
+                    <button id="btn-left-2" class="review__top-array-left">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                    <button id="btn-right-2" class="review__top-array-right">
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.70492 1.41L6.29492 0L0.294922 6L6.29492 12L7.70492 10.59L3.12492 6L7.70492 1.41Z"
+                                fill="#00142A" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class=" container ">
+            <swiper [navigation]="{nextEl: '#btn-right-2',  prevEl: '#btn-left-2'}" [watchOverflow]="true"
+                [slidesPerView]="1" [spaceBetween]="20" [initialSlide]="0" [centeredSlides]="false"
+                [breakpoints]="{'768': {'slidesPerView': 2,'spaceBetween': 30}}" class="swiper-wrapper">
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <p class="review-item__title">Відмінний барбершоп!</p>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Чудовий сервіс, професійні майстри і приємна атмосфера. Завжди задоволений результатом!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-1.jpg"
+                                                alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Світомир Степченко</p>
+                                    <!--     <p class="review-item__person-position">Будівельні матеріали</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Першокласний барбершоп!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Все до дрібниць продумано - від стилістики інтер'єру до якості стрижки. Рекомендую!"
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-2.jpg"
+                                                alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Лев Пришляк</p>
+                                    <!--   <p class="review-item__person-position">Товари для тварин</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Найкращий барбершоп у місті!</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Стримані ціни, висока якість обслуговування і дружній колектив. Всім друзям рекомендую!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--  <img class="review-item__person-photo" src="/assets/landing-img/clients/client-3.jpg"
+                                                alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Коля Береза</p>
+                                    <!--   <p class="review-item__person-position">Побутова техніка</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Відмінне місце для чоловіків, які дбають про свою
+                                    зовнішність</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Тут завжди можна отримати модний зачіску та настрій.
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-4.jpg"
+                                                alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Богдан Калаш</p>
+                                    <!--   <p class="review-item__person-position">Магазин гаджетів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide class="review__item review-item swiper-slide">
+                    <div style="padding: 24px;">
+                        <div class="review-item__top">
+                            <div class="review-item__top-left">
+                                <h6 class="review-item__title">Завітав у цей барбершоп з рекомендації друга і не
+                                    пошкодував</h6>
+                            </div>
+                        </div>
+                        <div class="review-item__content">
+                            Відмінна якість роботи, уважний персонал і зручні години роботи. Тепер тут мій постійний
+                            перукар!
+                        </div>
+                        <div class="review-item__bottom">
+                            <div class="review-item__person">
+                                <!--   <img class="review-item__person-photo" src="/assets/landing-img/clients/client-5.jpg"
+                                                alt="client-photo"> -->
+                                <div class="review-item__person-info">
+                                    <p class="review-item__person-name">Адам Купченко</p>
+                                    <!--   <p class="review-item__person-position">Магазин аксесуарів</p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</div>
