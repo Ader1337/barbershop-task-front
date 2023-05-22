@@ -7,10 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  isMenuOpen: boolean = false
   constructor(
     private readonly router: Router
   ) { }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen
+  }
 
   ngOnInit(): void {
   }

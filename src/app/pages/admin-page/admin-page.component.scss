@@ -1,14 +1,20 @@
 .admin {
     &__wrapper {
-        padding: 0 300px;
+        /*     padding: 0 300px; */
+        padding: 0 0 100px 0;
+        display: flex;
+        justify-content: center;
     }
 
     &__table {
     }
 }
+.container {
+    max-width: 1000px;
+    padding: 0 20px;
+    overflow: auto;
+}
 .admin-table {
-    overflow: hidden;
-    width: 850px;
     border-collapse: collapse;
     box-shadow: 0 0 0 1px #666;
     border-radius: 10px;

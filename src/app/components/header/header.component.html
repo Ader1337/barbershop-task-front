@@ -4,11 +4,19 @@
             <div class="logo">TYTLOGO</div>
         </div>
         <div class="header__column">
-            <div class="header__nav">
-                <a routerLinkActive="active" routerLink="admin" class="header__nav-item">Адмін</a>
-                <a routerLinkActive="active" routerLink="form" class="header__nav-item">Запис</a>
-                <a routerLinkActive="active" routerLink="about" class="header__nav-item">Про нас</a>
-                <a (click)="signOut()" class="header__nav-item">Вийти</a>
+            <div [class.active]="isMenuOpen" class="header__nav">
+                <a (click)="toggleMenu()" routerLinkActive="active" routerLink="admin" class="header__nav-item">Адмін</a>
+                <a (click)="toggleMenu()" routerLinkActive="active" routerLink="form" class="header__nav-item">Запис</a>
+                <a (click)="toggleMenu()" routerLinkActive="active" routerLink="about" class="header__nav-item">Про нас</a>
+                <a (click)="toggleMenu()" routerLinkActive="active" routerLink="reviews" class="header__nav-item">Відгуки</a>
+                <a (click)="toggleMenu()" (click)="signOut()" class="header__nav-item">Вийти</a>
+            </div>
+        </div>
+        <div class="header-menu-icon-wrapper">
+            <div [class.active]="isMenuOpen" (click)="toggleMenu()" class="header__menu-icon ">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </div>

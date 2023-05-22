@@ -4,7 +4,8 @@
     align-items: center;
 }
 .appointment__inner {
-    width: 700px;
+    padding: 0 20px;
+    width: 740px;
     background: #1f1f1f;
     box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.03), 4px 4px 10px rgba(0, 0, 0, 0.4);
     border-radius: 29px;
@@ -175,5 +176,39 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+
+
+@media screen and (max-width: 540px) {
+    .user-record__body{
+        display: block;
+    }
+    .user-record__left{
+        margin: 0 0 20px 0;
+    }
+    .user-record__text--left{
+        display: block !important;
+    }
+    .use-record-info{
+        padding: 30px 4px;
+    }
+    .form-page__inputs{
+        display: block;
+    }
+    .check-barber{
+        display: block;
+    }
+    .check-barber__item{
+        margin: 0 0 20px 0;
+        display: flex;
+        align-items: center;
+    }
+    .check-barber__photo{
+        margin: 0 15px 0 0;
+    }
+    .form-page__body{
+        padding: 10px !important;
     }
 }
