@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AboutComponent } from './components/about/about.component';
 import { AppointmentFormComponent } from './components/appointment-form/appointment-form.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { ReviewsPageComponent } from './pages/reviews-page/reviews-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
@@ -16,12 +17,13 @@ const routes: Routes = [
       { path: '', redirectTo: 'form', pathMatch: 'full' },
       { path: 'admin', component: AdminPageComponent, },
       { path: 'form', component: AppointmentFormComponent, },
+      { path: 'reviews', component: ReviewsPageComponent, },
       { path: 'about', component: AboutComponent },
     ]
   },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

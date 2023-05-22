@@ -1,31 +1,34 @@
 <div class="admin__wrapper">
-
-    <div class="barbars-select">
-        <button  [class.active]="!selectedbarberId" (click)="onResetFilter()" 
-            class="barbars-select-item">Усі</button>
-        <button [class.active]="barber._id === selectedbarberId" (click)="onSelectbarberFilter(barber._id)" *ngFor="let barber of barbers" class="barbars-select-item">{{barber.name}}</button>
+    <div class="container">
+        <div class="barbars-select">
+            <button [class.active]="!selectedbarberId" (click)="onResetFilter()"
+                class="barbars-select-item">Усі</button>
+            <button [class.active]="barber._id === selectedbarberId" (click)="onSelectbarberFilter(barber._id)"
+                *ngFor="let barber of barbers" class="barbars-select-item">{{barber.name}}</button>
+        </div>
+        <ng-container *ngFor="let date of records">
+            <p class="admin-table-date">{{date.date}}</p>
+            <table class="admin__table admin-table">
+                <thead class=" admin-table__head">
+                    <tr class="admin-table__head-row">
+                        <th width="130" class="admin-table__head-cell admin-table__cell">Барбер</th>
+                        <th class="admin-table__head-cell admin-table__cell">Дата запису</th>
+                        <th class="admin-table__head-cell admin-table__cell">Час запису</th>
+                        <th class="admin-table__head-cell admin-table__cell">Ім'я клієнта</th>
+                        <th class="admin-table__head-cell admin-table__cell">Телефон клієнта</th>
+                    </tr>
+                </thead>
+                <tbody class="admin-table__body">
+                    <tr [class.gray-row]="index % 2 !== 0" *ngFor="let record of date.records;let index = index"
+                        class="admin-table__body-row">
+                        <td class="admin-table__cell">{{record?.barberName}}</td>
+                        <td class="admin-table__cell">{{record?.date | date: 'dd.MM.YYYY'}}</td>
+                        <td class="admin-table__cell">{{record?.time}}</td>
+                        <td class="admin-table__cell">{{record?.name}}</td>
+                        <td class="admin-table__cell">{{record?.phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
     </div>
-    <ng-container *ngFor="let date of records">
-        <p class="admin-table-date">{{date.date}}</p>
-        <table class="admin__table admin-table">
-            <thead class=" admin-table__head">
-                <tr class="admin-table__head-row">
-                    <th width="130"  class="admin-table__head-cell admin-table__cell">Барбер</th>
-                    <th class="admin-table__head-cell admin-table__cell">Дата запису</th>
-                    <th class="admin-table__head-cell admin-table__cell">Час запису</th>
-                    <th class="admin-table__head-cell admin-table__cell">Ім'я клієнта</th>
-                    <th class="admin-table__head-cell admin-table__cell">Телефон клієнта</th>
-                </tr>
-            </thead>
-            <tbody class="admin-table__body">
-                <tr [class.gray-row]="index % 2 !== 0" *ngFor="let record of date.records;let index = index" class="admin-table__body-row">
-                    <td class="admin-table__cell">{{record?.barberName}}</td>
-                    <td class="admin-table__cell">{{record?.date | date: 'dd.MM.YYYY'}}</td>
-                    <td class="admin-table__cell">{{record?.time}}</td>
-                    <td class="admin-table__cell">{{record?.name}}</td>
-                    <td class="admin-table__cell">{{record?.phone}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </ng-container>
 </div>

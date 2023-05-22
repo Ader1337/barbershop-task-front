@@ -17,6 +17,9 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { AboutComponent } from './components/about/about.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { ReviewsPageComponent } from './pages/reviews-page/reviews-page.component';
+import { SwiperModule } from 'swiper/angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
     HeaderComponent,
     AppointmentFormComponent,
     AboutComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    ReviewsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    SwiperModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
