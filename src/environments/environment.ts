@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: "http://localhost:3000/api",
+  serverUrl: "https://back-barber.onrender.com/api",
   token: "auth_token", //token key in cookie
 };
 
